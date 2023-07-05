@@ -19,5 +19,19 @@ pipeline{
                 sh 'sleep 5'
 			}
 		}
+		stage('test stage') {
+			parallel (
+				stage('test1'){
+				steps{
+					echo 'this is test1'
+				}
+				}
+				stage('test2') {
+					steps{
+						echo 'this is test2'
+					}
+				}
+				)
+		}
 	}
 }	

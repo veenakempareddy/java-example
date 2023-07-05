@@ -20,7 +20,7 @@ pipeline{
 			}
 		}
 		stage('test stage') {
-			parallel (
+			parallel {
 				stage('test1'){
 				steps{
 					echo 'this is test1'
@@ -31,7 +31,7 @@ pipeline{
 						echo 'this is test2'
 					}
 				}
-				)
+				}
 		}
 	}
 }	
